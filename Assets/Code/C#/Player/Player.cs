@@ -1,5 +1,3 @@
-
-using Spine.Unity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +7,7 @@ using static ISetHealthUI;
 /// <summary>
 /// player类
 /// </summary>
-public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferBuff, IHeal , IAbleFaceToCamera
+public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferBuff, IHeal
 {// 定义输入类型和优先级
 
     public CharacterDataSO OccupationData;
@@ -206,11 +204,10 @@ public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferB
     private void Movement()
     {
         Vector3 movement = GameInputManager.Instance.GetMovement();
-       // HandleInput()
-
-
-
-
+        GameInputManager.InputCommand inputCommand = new GameInputManager.InputCommand();
+        inputCommand.Priority = movement.x == 0 ? 0 : 3;
+        inputCommand.Direction = movement.x == 0 ? 0 : (movement.x > 0 ? 1 : -1);
+        HandleInputFlipModel(inputCommand);
         if (movement == Vector3.zero)
         {
             rb.velocity *= 0.5f;
@@ -219,8 +216,6 @@ public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferB
 
         rb.velocity = movement.normalized * OccupationData.MoveSpeedMultiplier;
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, OccupationData.MoveSpeedMax);
-
-
     }
 
     private void Init()
@@ -285,37 +280,43 @@ public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferB
     private GameInputManager.InputCommand currentInput;
 
     // 处理输入并根据优先级更新
-    public void HandleInput(GameInputManager.InputCommand newInput)
+    public void HandleInputFlipModel(GameInputManager.InputCommand newInput)
     {
+        if (newInput.Equals(currentInput))
+        {
+            return;
+        }
         if (newInput.Priority >= currentInput.Priority)
         {
             currentInput = newInput;
-            // 处理方向
-            if (currentInput.Direction.x != 0)
+            if (currentInput.Direction != 0)
             {
-                SetFaceDir(currentInput.Direction.x);
+                SetFaceDir(currentInput.Direction);
             }
-            // 这里可以根据 Type 做不同的处理
         }
     }
 
     // 协程用于平滑地切换角色朝向
-    public IEnumerator FlipModel(float from, float to, float duration = 0.1f)
+    private IEnumerator FlipModel(float from, float to, float duration = 0.25f)
     {
         float elapsed = 0f;
         while (elapsed < duration)
         {
             float t = elapsed / duration;
             float scaleX = Mathf.Lerp(from, to, t);
-            root_Model.transform.localScale = new Vector3(scaleX, 1, 1);
+            var scale = root_Model.transform.localScale;
+            scale.x = scaleX;
+            root_Model.transform.localScale = scale;
             elapsed += Time.deltaTime;
             yield return null;
         }
-        root_Model.transform.localScale = new Vector3(to, 1, 1);
+        var finalScale = root_Model.transform.localScale;
+        finalScale.x = to;
+        root_Model.transform.localScale = finalScale;
     }
 
     // 设置角色面朝方向
-    public void SetFaceDir(float dir)
+    private void SetFaceDir(float dir)
     {
         float currentScaleX = root_Model.transform.localScale.x;
         float targetScaleX = dir > 0 ? 1 : -1;
@@ -592,14 +593,6 @@ public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferB
         }
     }
 
-    public void FaceToCamera(GameObject TargetCamera , Vector3 Adjustment)
-    {
-        //面向镜头功能
-        //TODO:可能需要略微修改角度，正对情况感官略微一般
-        Vector3 cameraEuler = TargetCamera.transform.eulerAngles;
-        Vector3 adjustedEuler = cameraEuler + Adjustment;
-        transform.eulerAngles = adjustedEuler;
-    }
 
     private void OnDestroy()
     {

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /// <summary>
@@ -21,14 +20,14 @@ public class TurnTheMouse_PlayerHand : MonoBehaviour
     protected void Start()
     {
         mainCamera = Camera.main;
-       
+
         rb = transform.parent.GetComponent<Rigidbody>();
         GameInputManager.Instance.OnAim += GameInputManager_OnAim;
     }
 
     private void GameInputManager_OnAim(object sender, Vector2 e)
     {
-        if(mainCamera == null)
+        if (mainCamera == null)
         {
             return;
         }
@@ -42,7 +41,10 @@ public class TurnTheMouse_PlayerHand : MonoBehaviour
             mousePos += (new Vector3(offset_X, offset_Y, 0) * UnityEngine.Random.Range(-5, 5) * 0.2f);
             weaponDirection = mousePos - PlayerManager.Instance.GetPlayer().transform.position;
             transform.right = weaponDirection;
-            PlayerManager.Instance.GetPlayer().SetFaceDir(weaponDirection.x);
+            GameInputManager.InputCommand inputCommand = new GameInputManager.InputCommand();
+            inputCommand.Priority = 1;
+            inputCommand.Direction = weaponDirection.x == 0 ? 0 : (weaponDirection.x > 0 ? 1 : -1);
+            PlayerManager.Instance.GetPlayer().HandleInputFlipModel(inputCommand);
             transform.localScale = new Vector3(1, Mathf.Sign(weaponDirection.x), 1);
             offset_X = 0;
             offset_Y = 0;

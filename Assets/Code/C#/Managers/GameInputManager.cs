@@ -5,19 +5,41 @@ using UnityEngine.InputSystem;
 public class GameInputManager : MonoBehaviour
 {
     public static GameInputManager Instance { get; private set; }
-    public enum InputType
-    {
-        None = 0,
-        Move = 1,
-        Attack = 2,
-        Skill = 3
-    }
+
 
     public struct InputCommand
     {
-        public InputType Type;
-        public Vector3 Direction;
+        public int Direction
+        {
+            get => _direction;
+            set => _direction = value == 0 ? 0 : (value > 0 ? 1 : -1);
+        }
+        private int _direction;
         public int Priority;
+
+        public override bool Equals(object obj)
+        {
+            if (obj is InputCommand other)
+            {
+                return Direction == other.Direction && Priority == other.Priority;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Direction, Priority);
+        }
+
+        public static bool operator ==(InputCommand left, InputCommand right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(InputCommand left, InputCommand right)
+        {
+            return !(left == right);
+        }
     }
 
     //private InputType inputType;
