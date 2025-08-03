@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ca738cf681a234f95223bbad5aa5aa, type: 3}
+  m_Name: drugResistance
+  m_EditorClassIdentifier: 
+  buffEnum: 2
+  sprite: {fileID: -3074584568296262126, guid: 00f8d2faffa161b439a65c016e113c48, type: 3}
+  description: "\u65E0\u6CD5\u76F4\u63A5\u6CBB\u7597"
+  buff: {fileID: 7579503150110494954, guid: 0fbc05d786da3b64c965f7dbd990ff2d, type: 3}
+  durationMax: 30
+  frequency: 0

@@ -1,0 +1,162 @@
+#pragma kernel ComputeLight
+#pragma kernel InitLight
+RWTexture2D<float4> Result;
+RWStructuredBuffer<int> _lightData;
+RWStructuredBuffer<int> _worldData0;
+RWStructuredBuffer<int> _worldData1;
+RWStructuredBuffer<int> _worldData2;
+RWStructuredBuffer<int> _worldData3;
+
+float4 _darkColor;
+float _airAttenuation;
+float _blockAttenuation;
+
+
+int _sunlight;
+int _horizon;
+
+float2 _worldSize;
+float2 _playerPosition;
+int _updateSizeX;
+int _updateSizeY;
+uint _maxlight;
+uint _light;
+
+int2 leftDownAnchors;
+int2 rightUpAnchors;
+
+uint II2I(int2 id)
+{
+    return (uint) id.x * (uint) _worldSize.y + (uint) id.y;
+}
+
+uint II2I(int3 id)
+{
+    return (uint) id.x * (uint) _worldSize.y + (uint) id.y;
+}
+
+uint ComputeNeighbourLight(int3 id)
+{
+    int3 id_T = id + int3(0, 1, 0);
+    int3 id_B = id + int3(0, -1, 0);
+    int3 id_L = id + int3(-1, 0, 0);
+    int3 id_R = id + int3(1, 0, 0);
+    uint light = _lightData[II2I(id)];
+    //if (_worldData0[II2I(id)] == -1 && id.y > _horizon && _worldData2[II2I(id)] == -1)
+    //    light = _sunlight;
+    light = max(light, _lightData[II2I(id_T)]);
+    light = max(light, _lightData[II2I(id_B)]);
+    light = max(light, _lightData[II2I(id_L)]);
+    light = max(light, _lightData[II2I(id_R)]);
+    return light;
+}
+
+//
+[numthreads(32, 32, 1)]
+void ComputeLight(uint3 id : SV_DispatchThreadID)
+{
+    for (int trun = 0; trun < 2; trun++)
+    {
+        leftDownAnchors.x = (int) _playerPosition.x - (uint) _updateSizeX / 2;
+        leftDownAnchors.y = (int) _playerPosition.y - (uint) _updateSizeY / 2;
+        rightUpAnchors.x = (int) _playerPosition.x + (uint) _updateSizeX / 2;
+        rightUpAnchors.y = (int) _playerPosition.y + (uint) _updateSizeY / 2;
+
+    
+    
+        leftDownAnchors.x = clamp(leftDownAnchors.x, 0, (int) _worldSize.x - 1);
+        leftDownAnchors.y = clamp(leftDownAnchors.y, 0, (int) _worldSize.y - 1);
+        rightUpAnchors.x = clamp(rightUpAnchors.x, 0, (int) _worldSize.x - 1);
+        rightUpAnchors.y = clamp(rightUpAnchors.y, 0, (int) _worldSize.y - 1);
+    
+        if (id.x < (uint) leftDownAnchors.x 
+            || id.x > (uint) rightUpAnchors.x 
+            || id.y < (uint) leftDownAnchors.y 
+            || id.y > (uint) rightUpAnchors.y)
+        {
+            return;
+        }
+
+        _light = _worldData3[II2I(id)];
+
+        if (_light > 0)
+        {
+            _light = min(ComputeNeighbourLight(id), _sunlight);
+            _lightData[II2I(id)] = _light;
+
+
+        }
+        if (id.y > (uint) _horizon
+        && _worldData0[II2I(id)] == -1
+        && _worldData2[II2I(id)] == -1)
+        {
+
+            _light = ComputeNeighbourLight(id);
+            _light = max(_light, _sunlight);
+
+            if (_light != (uint) _sunlight)
+            {
+                _light *= _airAttenuation;
+
+            }
+        
+
+        }
+        else
+        {
+            _light = ComputeNeighbourLight(id);
+            if (_worldData2[II2I(id)] == -1)
+            {
+                _light *= _blockAttenuation;
+
+            }
+            else
+            {
+                _light *= _airAttenuation;
+
+            }
+        }
+        _lightData[II2I(id)] = _light;
+        _darkColor.a = 1 - ((float) _lightData[II2I(id)] / (float) _maxlight);
+        Result[id.xy - leftDownAnchors] = _darkColor;
+    }
+
+
+}
+
+[numthreads(32, 32, 1)]
+void InitLight(uint3 id : SV_DispatchThreadID)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        _light = ComputeNeighbourLight(id);
+    
+        
+        if (_worldData3[II2I(id)] != -1)
+        {
+        
+        }
+        else if (_worldData2[II2I(id)] != -1)
+        {
+            _light *= _blockAttenuation;
+        }
+        else if (_worldData0[II2I(id)] != -1)
+        {
+            _light *= _airAttenuation;
+        }
+
+        _light = clamp(_light, 0, _maxlight);
+        _lightData[II2I(id)] = _light;
+    
+    }
+    
+
+}
+
+
+
+
+
+
+
+

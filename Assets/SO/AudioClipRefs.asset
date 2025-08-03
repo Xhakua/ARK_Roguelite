@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d538f5ccf035a4aac2db6d91e30a70, type: 3}
+  m_Name: AudioClipRefs
+  m_EditorClassIdentifier: 
+  player_movement:
+  - {fileID: 8300000, guid: 584f632cb0d9a864b85db9f49d7bf223, type: 3}
+  - {fileID: 8300000, guid: 521f65f75ddee1543b2f836eacb4f8c4, type: 3}
+  - {fileID: 8300000, guid: 5f954fe2f2b55044bb297501d462cef7, type: 3}
+  - {fileID: 8300000, guid: 835853d7054c3ed4d83e91f053f7fe0f, type: 3}
+  - {fileID: 8300000, guid: d6e3ea312ab7a1d46b53ee83b226e055, type: 3}
+  - {fileID: 8300000, guid: a99531958a0ec0245a8da5c7b4bd9167, type: 3}
+  - {fileID: 8300000, guid: 00b95436e658ead4ebfd32e9c380e4bb, type: 3}
+  - {fileID: 8300000, guid: 9c233a70ee8c7e7459dbe51649d93de3, type: 3}
+  player_meleeAttack:
+  - {fileID: 8300000, guid: 9f5813eff08011740aa6094bdc212ed2, type: 3}
+  player_rangedAttack:
+  - {fileID: 8300000, guid: 422f78163835d88468fcc214987f13e6, type: 3}
+  hit_metal: []
+  hit_meat:
+  - {fileID: 8300000, guid: 5cd99e4198f29fc48a089fc15a4cd030, type: 3}
+  - {fileID: 8300000, guid: c75a2d205eaa2e645a9d2ff035f64a8d, type: 3}
+  drill:
+  - {fileID: 8300000, guid: df8530b61194b5f4b85845d3e96313f5, type: 3}
+  - {fileID: 8300000, guid: e4d0bfdbe201949459d591c5ee5ed1cc, type: 3}
+  block_destroy:
+  - {fileID: 8300000, guid: e2b9de1bf52dfe6419ebc093c46ddd37, type: 3}

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f413709026f58744b7345f1a272c4ca, type: 3}
+  m_Name: CharacterDataSO 2
+  m_EditorClassIdentifier: 
+  Model: {fileID: -2253911629886400664, guid: 9d6502ceee925ca4fa8203576bb9166e, type: 3}
+  _healthMax: 100
+  _heal: 0
+  _magicMax: 1
+  _magicheal: 1
+  _defense: 1
+  _reactionCountAttenuation: 1
+  _magicResistance: 0
+  _invincibleTime: 1
+  _hitBackRsistance: 0
+  _meleeAttackMultiplier: 1
+  _meleeAttackAddition: 1
+  _meleeSpeedMultiplier: 1
+  _remoteAttackMultiplier: 1
+  _remoteAttackAddition: 1
+  _remoteSpeedMultiplier: 1
+  _resource: 1
+  _magicAttackMultiplier: 1
+  _magicAttackAddition: 1
+  _magicSpeedMultiplier: 1
+  _releaseMagicCost: 1
+  _reactionsBuffCountAddition: 1
+  _moveSpeedMax: 2
+  _moveSpeedMultiplier: 1
+  _acceleration: 111
+  bonusList: []

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7fb99f97d5864dab05eafe07efecf, type: 3}
+  m_Name: ShieldGene
+  m_EditorClassIdentifier: 
+  id: 0
+  itemName: 
+  itemDescription: 
+  itemSprite: {fileID: 21300000, guid: 81fa0a41e760610489e224413640bb61, type: 3}
+  materialEnum: 0
+  complexity: 0
+  itemPrefab: {fileID: 2886010405335288560, guid: d7dbeba4a9e97b9468e657525033bed9,
+    type: 3}
+  itemType: 5
+  canBagInteraction: 0
+  damage: 0
+  damageEnum: 0
+  damageCount: 0
+  hitBack: 0
+  damageMul: 0
+  speedMul: 0
+  hitbackMul: 0
+  recoilMax: 0
+  recoilMin: 0
+  recoilforce: 0
+  lifeTimeMul: 8
+  lifeTimerMax: 0
+  speed: 0
+  swingSpeed: 0
+  attackCount: 0
+  whackMul: 0
+  whackTimerMax: 0
+  occupationData: {fileID: 0}
+  geneType: 4
+  geneGrade: 0
+  Gene_healthMaxValue: 0
+  Gene_magicMaxValue: 0
+  Gene_defenseValue: 0
+  Gene_meleeAttackMultiplierRate: 1
+  Gene_meleeSpeedMultiplierRate: 1
+  Gene_remoteAttackMultiplierRate: 1
+  Gene_remoteSpeedMultiplierRate: 1
+  Gene_magicAttackMultiplierRate: 1
+  Gene_magicSpeedMultiplierRate: 1
+  Gene_releaseMagicCostRate: 1
+  Gene_moveSpeedMaxRate: 1
+  Gene_SkillSizeRate: 1
+  Gene_SkillLifeTimeRate: 1
+  Gene_SkillTargetRangeRate: 1
+  Gene_AttackValue: 0
+  fireRateTimerMax: 10
+  SkillSize: 0
+  SkillLifeTime: 0
+  SkillTargetRange: 0
+  NeedTarget: 0

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ca738cf681a234f95223bbad5aa5aa, type: 3}
+  m_Name: heal
+  m_EditorClassIdentifier: 
+  buffEnum: 0
+  sprite: {fileID: 146348102920769694, guid: 0914b8739a11d504e967699fc07885a9, type: 3}
+  description: "\u6062\u590D\u751F\u547D,\u51CF\u5C11\u5D29\u574F"
+  buff: {fileID: 4067202445888142400, guid: 9cf8701137e5f55429d662ceb86b634c, type: 3}
+  durationMax: 5
+  frequency: 1

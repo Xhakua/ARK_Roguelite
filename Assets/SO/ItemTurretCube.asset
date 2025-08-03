@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7fb99f97d5864dab05eafe07efecf, type: 3}
+  m_Name: ItemTurretCube
+  m_EditorClassIdentifier: 
+  id: 111
+  itemName: 1
+  itemDescription: 
+  itemSprite: {fileID: -6080790153436307028, guid: 86c2c87e331daae4fb8d4d54ee30e53a,
+    type: 3}
+  materialEnum: 0
+  complexity: 1
+  itemPrefab: {fileID: 5108254125033381834, guid: 88853bf7a3de5da4e93270f22dc1116f,
+    type: 3}
+  itemType: 0
+  canBagInteraction: 0
+  damage: 0
+  damageEnum: 0
+  damageCount: 0
+  hitBack: 0
+  damageMul: 1
+  speedMul: 1
+  hitbackMul: 1
+  recoilMax: 1
+  recoilMin: 1
+  recoilforce: 1
+  fireRateTimerMax: 0.5
+  lifeTimeMul: 1
+  lifeTimerMax: 0
+  speed: 0
+  swingSpeed: 0
+  attackCount: 0
+  whackMul: 0
+  whackTimerMax: 0
+  occupationData: {fileID: 0}

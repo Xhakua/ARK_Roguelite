@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7fb99f97d5864dab05eafe07efecf, type: 3}
+  m_Name: Saiga12
+  m_EditorClassIdentifier: 
+  id: 33
+  itemName: 
+  itemDescription: 
+  itemSprite: {fileID: 8798207675427756880, guid: ec5a1d901bfb5964f80e41f565e6f3a7, type: 3}
+  gradeEnum: 1
+  complexity: 5
+  itemPrefab: {fileID: 7338442656957567795, guid: 369b1ebb8a7958e47a60a5d727ce4d30, type: 3}
+  itemType: 0
+  canBagInteraction: 1
+  damage: 0
+  damageEnum: 0
+  count: 0
+  hitBack: 0
+  damageMul: 0.2
+  speedMul: 0.5
+  hitbackMul: 2
+  recoilMax: 5
+  recoilMin: 2
+  recoilforce: 5
+  fireRateTimerMax: 0.2
+  lifeTimeMul: 0.1
+  lifeTimerMax: 0
+  speed: 0
+  swingSpeed: 1
+  attackCount: 1
+  playerValues: {fileID: 0}

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f413709026f58744b7345f1a272c4ca, type: 3}
+  m_Name: Enemy1
+  m_EditorClassIdentifier: 
+  characterName: 1
+  model: {fileID: 4436373266359244649, guid: 86bb0ecc6a59b814a8404b5050643421, type: 3}
+  characterDescription: 
+  healthMax: 111
+  heal: 1
+  magicMax: 0
+  magicheal: 0
+  defense: 0
+  reactionCountAttenuation: 0
+  magicResistance: 0
+  invincibleTime: 0
+  hitBackRsistance: 0
+  meleeAttackMultiplier: 0
+  meleeAttackAddition: 0
+  meleeSpeedMultiplier: 0
+  remoteAttackMultiplier: 0
+  remoteAttackAddition: 0
+  remoteSpeedMultiplier: 0
+  resource: 0
+  magicAttackMultiplier: 0
+  magicAttackAddition: 0
+  magicSpeedMultiplier: 0
+  releaseMagicCost: 0
+  reactionsBuffCountAddition: 0
+  moveSpeedMax: 11
+  moveSpeedMultiplier: 0
+  acceleration: 0

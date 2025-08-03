@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7fb99f97d5864dab05eafe07efecf, type: 3}
+  m_Name: Bison
+  m_EditorClassIdentifier: 
+  id: 44
+  itemName: Bison
+  itemDescription: 
+  itemSprite: {fileID: 6249401632881586362, guid: 2445d22cf40d91a4c83c94864483ca4c,
+    type: 3}
+  materialEnum: 0
+  complexity: 2
+  itemPrefab: {fileID: 3308524159964310821, guid: 2c4f48318914b0b42b9df5f5a4fb5a09,
+    type: 3}
+  itemType: 0
+  canBagInteraction: 1
+  damage: 0
+  damageEnum: 0
+  damageCount: 0
+  hitBack: 1
+  damageMul: 0.5
+  speedMul: 0
+  hitbackMul: 0.5
+  recoilMax: 1
+  recoilMin: 1
+  recoilforce: 0
+  fireRateTimerMax: 0.05
+  lifeTimeMul: 1
+  lifeTimerMax: 0
+  speed: 0
+  swingSpeed: 1
+  attackCount: 1
+  whackMul: 0
+  whackTimerMax: 0
+  occupationData: {fileID: 0}

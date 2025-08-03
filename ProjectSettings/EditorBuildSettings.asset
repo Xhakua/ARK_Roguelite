@@ -8,4 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/AdventurersGuild.unity
+    guid: e8ecaa63db541ea4783283b1534c6b0a
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 0601360ac270236449bcdc18988e6c3d
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: d2d85a96693ca2449bc12488ed3f2307
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

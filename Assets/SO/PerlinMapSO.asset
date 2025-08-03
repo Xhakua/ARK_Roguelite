@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5a56a426d123b4c9ea1e228c6c274f, type: 3}
+  m_Name: PerlinMapSO
+  m_EditorClassIdentifier: 
+  worldSize: {x: 400, y: 1, z: 400}
+  wall: {fileID: 11400000, guid: 07a77ac7c0380654caaa9fc514b4571f, type: 2}
+  floor: {fileID: 11400000, guid: 46a68fb08251d7e4eb021847df2ea55c, type: 2}
+  mines: []
+  enemies:
+  - enemy: {fileID: 8981280868735907214, guid: b53215685efabd6469e7196989c8b1ee, type: 3}
+    respawnRate: 100
+    isDay: 1
+    isUp: 1

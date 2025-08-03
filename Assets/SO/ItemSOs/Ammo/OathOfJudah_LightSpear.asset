@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7fb99f97d5864dab05eafe07efecf, type: 3}
+  m_Name: OathOfJudah_LightSpear
+  m_EditorClassIdentifier: 
+  id: 55
+  itemName: OathOfJudah_LightSpear
+  itemDescription: 
+  itemSprite: {fileID: 6272346389216603913, guid: 2ed3630dfdd75ca499f78be50efbb42b, type: 3}
+  gradeEnum: 1
+  complexity: 1
+  itemPrefab: {fileID: 8815100440464280408, guid: ecfb862357ba376408f5fa89de150775, type: 3}
+  itemType: 2
+  canBagInteraction: 0
+  damage: 13
+  damageEnum: 4
+  count: 13
+  hitBack: 0
+  damageMul: 0
+  speedMul: 0
+  hitbackMul: 0
+  recoilMax: 0
+  recoilMin: 0
+  recoilforce: 0
+  fireRateTimerMax: 0
+  lifeTimeMul: 0
+  lifeTimerMax: 13
+  speed: 13
+  swingSpeed: 0
+  attackCount: 0
+  whackMul: 0
+  whackTimerMax: 0
+  playerValues: {fileID: 0}

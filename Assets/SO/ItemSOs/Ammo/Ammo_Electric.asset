@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7fb99f97d5864dab05eafe07efecf, type: 3}
+  m_Name: Ammo_Electric
+  m_EditorClassIdentifier: 
+  id: 3
+  itemName: 
+  itemDescription: 
+  itemSprite: {fileID: 21300000, guid: 8cf44db00799a4b44a74c87a1471bb2e, type: 3}
+  gradeEnum: 1
+  complexity: 2
+  itemPrefab: {fileID: 13902676480588328, guid: caa270341299fe640ac855cb93dbbc3e, type: 3}
+  itemType: 2
+  canBagInteraction: 0
+  damage: 10
+  damageEnum: 4
+  count: 10
+  hitBack: 5
+  damageMul: 0
+  speedMul: 0
+  hitbackMul: 0
+  recoilMax: 0
+  recoilMin: 0
+  recoilforce: 0
+  fireRateTimerMax: 0
+  lifeTimeMul: 0
+  lifeTimerMax: 5
+  speed: 50
+  swingSpeed: 1
+  attackCount: 1
+  playerValues: {fileID: 0}

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f494f122155bc4a8caf9cd275ee730, type: 3}
+  m_Name: BulletListSO_HandLauncher
+  m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 988245103143652369, guid: 601a57b4f00e9cb47bdddc78671e6477, type: 3}
