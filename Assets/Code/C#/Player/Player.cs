@@ -205,7 +205,7 @@ public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferB
     {
         Vector3 movement = GameInputManager.Instance.GetMovement();
         GameInputManager.InputCommand inputCommand = new GameInputManager.InputCommand();
-        inputCommand.Priority = movement.x == 0 ? 0 : 3;
+        inputCommand.Priority = 3;
         inputCommand.Direction = movement.x == 0 ? 0 : (movement.x > 0 ? 1 : -1);
         HandleInputFlipModel(inputCommand);
         if (movement == Vector3.zero)
@@ -284,6 +284,11 @@ public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferB
     {
         if (newInput.Equals(currentInput))
         {
+            if (newInput.Direction == 0)
+            {
+                currentInput = new GameInputManager.InputCommand();
+                currentInput.Priority = 0;
+            }
             return;
         }
         if (newInput.Priority >= currentInput.Priority)
@@ -292,6 +297,10 @@ public class Player : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISufferB
             if (currentInput.Direction != 0)
             {
                 SetFaceDir(currentInput.Direction);
+            }
+            else
+            {
+                currentInput.Priority = 0;
             }
         }
     }
