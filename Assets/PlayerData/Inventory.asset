@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory2DataName: PlayerBag
   items:
+  - {fileID: 11400000, guid: 27820a136ba19244fbf09800e076a8bc, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: f741569e2b559b9458484dc70671e23f, type: 2}
   - {fileID: 11400000, guid: 2b1f8245c035ef844a70c48d2889f86b, type: 2}
-  - {fileID: 11400000, guid: dd74dd1a7beb2bb4abb7f5559add3dfd, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -26,17 +25,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: ec5a22e5a02719f46b7341d66c3855b0, type: 2}
-  - {fileID: 11400000, guid: 34deb2c549302d54f91a739bbb139129, type: 2}
-  - {fileID: 11400000, guid: cb26b011ccf11ce4facb30a7a345fac5, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: cb26b011ccf11ce4facb30a7a345fac5, type: 2}
-  - {fileID: 11400000, guid: 34deb2c549302d54f91a739bbb139129, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db8024d9adc34c747af44e28204aa6b1, type: 3}
-  m_Name: GeneInventory
+  m_Name: BulletListSO_Gun
   m_EditorClassIdentifier: 
-  inventory2DataName: 
+  inventory2DataName: BulletListSO_Gun
   items:
-  - {fileID: 11400000, guid: 34deb2c549302d54f91a739bbb139129, type: 2}
-  - {fileID: 11400000, guid: cb26b011ccf11ce4facb30a7a345fac5, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  inventoryEnum: 1
-  whatCanReceive: 0500000004000000
+  - {fileID: 11400000, guid: 2127991e5f8862b4794fdcf7ae34bae5, type: 2}
+  inventoryEnum: 2
+  whatCanReceive: 0200000004000000

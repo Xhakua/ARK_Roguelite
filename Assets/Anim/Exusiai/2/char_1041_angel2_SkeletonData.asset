@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: Exusiai
+  m_Name: char_1041_angel2_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 840081abc37469c4e9ee47aa17701726, type: 2}
+  - {fileID: 11400000, guid: 8f8383c6c776bdf4c9455bc1508e269f, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: 9e8f836d63f012441be5fbcc0e9d4355, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: 70651aac0c253b045be4ac1f27c5d4ad, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
