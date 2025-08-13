@@ -20,7 +20,7 @@ MonoBehaviour:
   complexity: 0
   itemPrefab: {fileID: 5755924951242370524, guid: 7394d0811caed234686e857b475ab65e,
     type: 3}
-  itemType: 4
+  itemType: 0
   canBagInteraction: 0
   damage: 1
   damageEnum: 5

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory2DataName: PlayerBag
   items:
+  - {fileID: 11400000, guid: 93885a4b29e4cbf4cabd1a462581ab47, type: 2}
   - {fileID: 11400000, guid: 27820a136ba19244fbf09800e076a8bc, type: 2}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 2b1f8245c035ef844a70c48d2889f86b, type: 2}
   - {fileID: 0}
