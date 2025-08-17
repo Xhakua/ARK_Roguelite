@@ -137,7 +137,7 @@ MonoBehaviour:
   itemSO: {fileID: 11400000, guid: 2127991e5f8862b4794fdcf7ae34bae5, type: 2}
   layerMask:
     serializedVersion: 2
-    m_Bits: 392
+    m_Bits: 2432
   radius: 0.2
 --- !u!114 &8190390133158757149
 MonoBehaviour:

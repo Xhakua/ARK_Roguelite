@@ -14,7 +14,7 @@ public class PlayerAnimCtrl : MonoBehaviour
     {
         animator.SetFloat(SpeedHash, Vector3.Magnitude(PlayerManager.Instance.GetPlayer().rb.velocity));
 
-
+        
     }
 
 

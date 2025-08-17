@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: PerlinMapSO
   m_EditorClassIdentifier: 
   worldSize: {x: 400, y: 1, z: 400}
-  wall: {fileID: 11400000, guid: 07a77ac7c0380654caaa9fc514b4571f, type: 2}
-  floor: {fileID: 11400000, guid: 46a68fb08251d7e4eb021847df2ea55c, type: 2}
+  walls:
+  - {fileID: 11400000, guid: 187a9b20c3fd0264d909847dacbe4ab6, type: 2}
+  - {fileID: 11400000, guid: 8076e21111fb62c4a87325f52e46c768, type: 2}
+  - {fileID: 11400000, guid: 2fbe74b0035fd0b43be69131731a065f, type: 2}
+  - {fileID: 11400000, guid: 87f802e4cbd8d93478fb6326b16de25b, type: 2}
+  - {fileID: 11400000, guid: 07a77ac7c0380654caaa9fc514b4571f, type: 2}
+  floors:
+  - {fileID: 11400000, guid: d27aa4d3125f02d41b9a34785523a4a8, type: 2}
+  - {fileID: 11400000, guid: eceeeb44bf57bf94eb0600eab278664a, type: 2}
+  - {fileID: 11400000, guid: 46a68fb08251d7e4eb021847df2ea55c, type: 2}
   mines: []
   enemies:
   - enemy: {fileID: 8981280868735907214, guid: b53215685efabd6469e7196989c8b1ee, type: 3}

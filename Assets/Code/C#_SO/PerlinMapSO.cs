@@ -5,8 +5,11 @@ using UnityEngine;
 public class PerlinMapSO : ScriptableObject
 {
     public Vector3Int worldSize;
-    public CubeSO wall;
-    public CubeSO floor;
+
+    public CubeSO[] walls;
+    public CubeSO[] floors;
+    public CubeSO wall { get => walls[UnityEngine.Random.Range(0, walls.Length)];}
+    public CubeSO floor { get => floors[UnityEngine.Random.Range(0, floors.Length)]; }
 
     public Mine[] mines;
     public Enemy[] enemies;
