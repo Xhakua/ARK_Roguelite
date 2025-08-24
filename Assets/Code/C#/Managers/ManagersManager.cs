@@ -22,6 +22,7 @@ public class ManagersManager : MonoBehaviour
 
         if (MapManager.Instance != null)
         {
+            Debug.Log("MapManager Init");
             MapManager.Instance.Init();
         }
 

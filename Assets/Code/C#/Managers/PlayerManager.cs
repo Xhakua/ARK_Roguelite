@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("PlayerManager Init" + playerSpawnPoint.position);
 
         CreatePlayer(playerSpawnPoint, occupationDataListSO.occupationDataList[selectedOccupationIndex]);
-        UIManager.Instance.ShowOccupationSelectionUI();
+        //UIManager.Instance.ShowOccupationSelectionUI();
         virtualCamera.Follow = playerList[0].transform;
     }
     public Player GetPlayer(int index = 0)

@@ -109,7 +109,7 @@ public class MapManager : MonoBehaviour
         worldSize = mapChunk.worldSize;
         caveData = new int[worldSize.x, worldSize.z];
         WorldDataInit(worldSize);
-        //Debug.Log(worldData.worldDataFloor);
+        Debug.Log(worldData.worldDataFloor);
         //GetComponent<WaveFunctionCollapseGenerator>().InitializeGeneration();
         GenerateMap();
 

@@ -20,11 +20,6 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
     [SerializeField] protected float acceleration;
     [SerializeField] protected float magicResistance = 50;
 
-    //关于怪物技能
-    [SerializeField] protected bool HaveSkill = false;
-    [SerializeField] protected float SkillColdTimeMax = 1;
-    protected float currSkillColdTime = 0;
-    protected bool CanReleaseSkill = false;
 
     public ReactionsBuff reactionsBuff;
     protected ReactionsBuff.DamageEnum lastDamageEnum;
@@ -72,7 +67,6 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
     protected void OnEnable()
     {
         health = healthMax;
-        currSkillColdTime = SkillColdTimeMax;
         reactionsBuff = new ReactionsBuff(ReactionsBuff.DamageEnum.normal, 0);
         lastDamageEnum = reactionsBuff.GetDamageEnum();
         SetDeltaTime(1);
@@ -263,10 +257,7 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
         //{
         //    Move();
         //}
-        if (HaveSkill)
-        {
-            SkillColdTimeUpdate();          //技能冷却刷新
-        }
+
 
         HitbackMovement();
         AtkCube();
@@ -287,7 +278,6 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
                 {
                     wallDamageCount += Damage;
                     enemyState = EnemyState.AttackWall;
-                    //Debug.Log(wallDamageCount);
                     if (wallDamageCount >= wallData.destroyCount)
                     {
                         try
@@ -352,8 +342,12 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
 
             if (MapManager.Instance.GetWorldData(MapManager.TileLayer.Wall)[targetPos.x, targetPos.y] != 0)
             {
+                Debug.Log("AttackWall");
                 wallData = MapManager.Instance.mapAtlas.GetCube(MapManager.Instance.GetWorldData(MapManager.TileLayer.Wall)[targetPos.x, targetPos.y] - 1);
-                if (wallData != null) { enemyState = EnemyState.AttackWall; }
+                if (wallData != null)
+                {
+                    enemyState = EnemyState.AttackWall;
+                }
             }
         }
 
@@ -537,28 +531,7 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
     }
 
 
-    #region 关于技能
-    //技能冷却刷新,不一定仅有时间刷新
-    protected virtual void SkillColdTimeUpdate()
-    {
-        if (currSkillColdTime >= 0)
-        {
-            currSkillColdTime -= Time.deltaTime;
-        }
-        else
-        {
-            CanReleaseSkill = true;
-        }
-    }
 
-    //怪物技能释放
-    protected virtual void Skill()
-    {
-        CanReleaseSkill = false;
-        currSkillColdTime = SkillColdTimeMax;
-        enemyState = EnemyState.Move;
-    }
-    #endregion
 }
 public enum EnemyState
 {

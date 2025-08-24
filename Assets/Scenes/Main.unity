@@ -948,7 +948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axis: 1
   pool: []
-  cubes: {fileID: 0}
+  cubes: {fileID: 1099756919}
   dynamicMapSize: {x: 12, y: 12}
   playerOffset: {x: 0, y: 0.5, z: 0}
   mapAtlas: {fileID: 11400000, guid: 65fbbe89297809545b5bae22760de862, type: 2}
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d50764846fd047468256fdfb3450c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapChunk: {fileID: 11400000, guid: e00291fb475d3ff4db4e2e21f7b5fd32, type: 2}
+  mapChunk: {fileID: 0}
   maxAttempts: 3
   visualizeProcess: 0
   StepMode: 0
