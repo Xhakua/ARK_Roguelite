@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerAnimCtrl : MonoBehaviour
 {
     private Animator animator;
-
     private int SpeedHash = Animator.StringToHash("Speed");
     void Start()
     {

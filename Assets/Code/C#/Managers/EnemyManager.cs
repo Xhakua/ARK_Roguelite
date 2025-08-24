@@ -141,7 +141,7 @@ public class EnemyManager : MonoBehaviour
                                     {
                                         //Debug.Log("Respawn");
                                         //Debug.Log(respawnPos);
-                                        GenerateEnemy(perlinMapSO.enemies[i].enemy, new Vector3(respawnPos.x, 1.6f, respawnPos.y));
+                                        GenerateEnemy(perlinMapSO.enemies[i].enemy, new Vector3(respawnPos.x, 0.38f, respawnPos.y));
                                         yield return null;
                                     }
                                 }

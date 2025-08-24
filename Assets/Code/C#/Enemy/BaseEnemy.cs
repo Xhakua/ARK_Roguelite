@@ -250,13 +250,11 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
     private EnemyState enemyState = EnemyState.Move;
     virtual protected void FixedUpdate()
     {
+        FixMove();
         switch (enemyState)
         {
             case EnemyState.Move:
-                if(canMove) Move();
-                break;
-            case EnemyState.Skill:
-                if(CanReleaseSkill) Skill();
+                if (canMove) Move();
                 break;
             default:
                 break;
@@ -324,10 +322,23 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
         }
     }
 
+
+    public void FixMove()
+    {
+        if (dir == Vector2Int.zero) return;
+        if (dir.x == 0)
+        {
+            rb.MovePosition(new Vector3(Mathf.Lerp(rb.position.x, GetPos().x, speedMax * Time.deltaTime), 0, rb.position.z));
+        }
+        else if (dir.y == 0)
+        {
+            rb.MovePosition(new Vector3(rb.position.x, 0, Mathf.Lerp(rb.position.z, GetPos().y, speedMax * Time.deltaTime)));
+        }
+    }
     public void Move()
     {
         Vector2Int currentPos = GetPos();
-        if (Heuristic(currentPos, PathManager.Instance.TargetPos) <= 1.1)
+        if (Heuristic(currentPos, PathManager.Instance.TargetPos) <= 2f)
         {
             //TODO：关于怪物是否到达就死亡？
             Die();
@@ -341,18 +352,9 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
 
             if (MapManager.Instance.GetWorldData(MapManager.TileLayer.Wall)[targetPos.x, targetPos.y] != 0)
             {
-                Debug.Log("Wall");
                 wallData = MapManager.Instance.mapAtlas.GetCube(MapManager.Instance.GetWorldData(MapManager.TileLayer.Wall)[targetPos.x, targetPos.y] - 1);
                 if (wallData != null) { enemyState = EnemyState.AttackWall; }
             }
-        }
-
-        //判断是否需要释放技能
-        if (CanReleaseSkill)
-        {
-            Debug.Log("EnemySkill");
-            enemyState = EnemyState.Skill;
-            return;
         }
 
         if (enemyState == EnemyState.Move)
@@ -371,9 +373,14 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
                 dir = PathManager.Instance.GetMoveDir(currentPos);
                 //Debug.Log("AStar");
             }
-
-            Vector3 pos = new Vector3Int(dir.x, 1, dir.y);
-            rb.MovePosition(rb.position + pos * speedMax * Time.fixedDeltaTime);
+            if (dir.x == 0)
+            {
+                rb.velocity = new Vector3(0, 0, speedMax * dir.y);
+            }
+            else
+            {
+                rb.velocity = new Vector3(speedMax * dir.x, 0, 0);
+            }
         }
     }
 
@@ -424,8 +431,14 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
     }
     private Vector2Int GetPos()
     {
-        Vector2Int pos = new Vector2Int((int)Math.Round(transform.position.x, MidpointRounding.AwayFromZero), (int)Math.Round(transform.position.z, MidpointRounding.AwayFromZero));
-        return pos;
+        // 取整后判断正负方向，保证坐标与地图格子对齐
+        int x = transform.position.x >= 0
+            ? (transform.position.x > (int)transform.position.x ? (int)transform.position.x + 1 : (int)transform.position.x)
+            : (transform.position.x < (int)transform.position.x ? (int)transform.position.x - 1 : (int)transform.position.x);
+        int z = transform.position.z >= 0
+            ? (transform.position.z > (int)transform.position.z ? (int)transform.position.z + 1 : (int)transform.position.z)
+            : (transform.position.z < (int)transform.position.z ? (int)transform.position.z - 1 : (int)transform.position.z);
+        return new Vector2Int(x, z);
     }
     private IEnumerator AStar()
     {
@@ -531,7 +544,8 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
         if (currSkillColdTime >= 0)
         {
             currSkillColdTime -= Time.deltaTime;
-        }else
+        }
+        else
         {
             CanReleaseSkill = true;
         }
@@ -548,8 +562,6 @@ public class BaseEnemy : MonoBehaviour, IHurt, ISetHealthUI, IReactionsUI, ISetD
 }
 public enum EnemyState
 {
-    Idle,
     Move,
     AttackWall,
-    Skill,
 }

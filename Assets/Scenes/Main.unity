@@ -677,6 +677,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 319785786278196584, guid: 2d620e373e51a0f43b946eafd058b37f,
+        type: 3}
+      propertyPath: maxEnemyCount
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 319785786278196584, guid: 2d620e373e51a0f43b946eafd058b37f,
+        type: 3}
+      propertyPath: respawnSizeMax.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 319785786278196584, guid: 2d620e373e51a0f43b946eafd058b37f,
+        type: 3}
+      propertyPath: respawnSizeMax.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 319785786278196584, guid: 2d620e373e51a0f43b946eafd058b37f,
+        type: 3}
+      propertyPath: respawnSizeMin.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 319785786278196584, guid: 2d620e373e51a0f43b946eafd058b37f,
+        type: 3}
+      propertyPath: respawnSizeMin.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1721212737985030237, guid: 2d620e373e51a0f43b946eafd058b37f,
         type: 3}
       propertyPath: m_Name
